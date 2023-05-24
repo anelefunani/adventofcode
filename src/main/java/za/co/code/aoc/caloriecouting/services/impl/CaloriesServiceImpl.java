@@ -25,22 +25,19 @@ public class CaloriesServiceImpl implements CaloriesService {
 
     @Override
     public MostCalories getMostCalories() {
-
-        List<Elf> result = getTotalCaloriesPerElf(getElves());
-
-        return getMostCalories(result);
+        return getMostCalories(getTotalCaloriesPerElfOrderedByCaloriesAsc(getElves()));
     }
 
     @Override
     public TopMostCalories getTopMostCalories() {
-        return getTopMostCalories(getTotalCaloriesPerElf(getElves()));
+        return getTopMostCalories(getTotalCaloriesPerElfOrderedByCaloriesAsc(getElves()));
     }
 
     private Elves getElves() {
         return caloriesDao.getElves();
     }
 
-    private List<Elf> getTotalCaloriesPerElf(Elves elves) {
+    private List<Elf> getTotalCaloriesPerElfOrderedByCaloriesAsc(Elves elves) {
         return elves.getElves()
                 .stream()
                 .map(elf -> elf.getCalories()
@@ -57,14 +54,11 @@ public class CaloriesServiceImpl implements CaloriesService {
     }
 
     private TopMostCalories getTopMostCalories(List<Elf> elves) {
-        List<Elf> topThreeElves = elves.subList(elves.size() - TOP_THREE, elves.size());
 
-        List<Calories> caloriesTotal = topThreeElves.stream().reduce(ImmutableElf.builder()
+        return ImmutableTopMostCalories.of(elves.subList(elves.size() - TOP_THREE, elves.size()).stream().reduce(ImmutableElf.builder()
                 .calories(Collections.singletonList(ImmutableCalories.of(0)))
                 .build(), (x, y) -> ImmutableElf.builder()
                 .calories(Collections.singletonList(ImmutableCalories.of(x.getCalories().get(0).getValue() + y.getCalories().get(0).getValue())))
-                .build()).getCalories();
-
-        return ImmutableTopMostCalories.of(caloriesTotal.get(0).getValue());
+                .build()).getCalories().get(0).getValue());
     }
 }
