@@ -5,8 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.co.code.aoc.caloriecouting.dao.CaloriesDao;
 import za.co.code.aoc.caloriecouting.dao.impl.CaloriesDaoImpl;
-import za.co.code.aoc.caloriecouting.domain.value.ImmutableMostCalories;
-import za.co.code.aoc.caloriecouting.domain.value.MostCalories;
+import za.co.code.aoc.caloriecouting.domain.value.*;
 import za.co.code.aoc.caloriecouting.services.CaloriesService;
 
 class CaloriesServiceImplTest {
@@ -25,5 +24,11 @@ class CaloriesServiceImplTest {
     void shouldReturnMostCalories() {
         MostCalories mostCalories = caloriesService.getMostCalories();
         Assertions.assertEquals(ImmutableMostCalories.of(24000), mostCalories);
+    }
+
+    @Test
+    void shouldReturnTopThreeCalories() {
+        TopMostCalories topMostCalories = caloriesService.getTopMostCalories();
+        Assertions.assertEquals(ImmutableTopMostCalories.of(45000), topMostCalories);
     }
 }

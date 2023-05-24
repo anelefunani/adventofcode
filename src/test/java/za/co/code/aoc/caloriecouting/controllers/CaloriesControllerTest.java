@@ -27,4 +27,9 @@ class CaloriesControllerTest {
     void shouldReturnMostCalories() {
         Assertions.assertEquals(24000, caloriesController.mostCalories());
     }
+
+    @Test
+    void shouldReturnTopMostCalories() {
+        Assertions.assertEquals(45000, caloriesController.topThreeCalories());
+    }
 }

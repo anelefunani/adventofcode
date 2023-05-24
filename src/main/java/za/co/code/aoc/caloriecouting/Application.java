@@ -7,11 +7,14 @@ import za.co.code.aoc.caloriecouting.services.impl.CaloriesServiceImpl;
 public class Application {
 
     public static void main(String[] args) {
-        CaloriesController caloriesController = new CaloriesController(
+        System.out.println("Most calories: " + getController().mostCalories());
+        System.out.println("Top three calories: " + getController().topThreeCalories());
+    }
+
+    private static CaloriesController getController() {
+        return new CaloriesController(
                 new CaloriesServiceImpl(
                         new CaloriesDaoImpl(
                                 "src/main/resources/input.data")));
-        int mostCalories = caloriesController.mostCalories();
-        System.out.println("Most calories: " + mostCalories);
     }
 }

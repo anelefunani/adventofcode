@@ -13,4 +13,8 @@ public class CaloriesController {
     public int mostCalories() {
         return caloriesService.getMostCalories().getValue();
     }
+
+    public int topThreeCalories() {
+        return caloriesService.getTopMostCalories().getValue();
+    }
 }
