@@ -1,10 +1,10 @@
-package za.co.code.aoc.caloriecouting.adapters;
+package za.co.code.aoc.caloriecouting.adapters.impl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import za.co.code.aoc.caloriecouting.adapters.Adapter;
 import za.co.code.aoc.caloriecouting.domain.values.Elves;
-import za.co.code.aoc.caloriecouting.adapters.impl.RawToElvesAdapter;
 
 import java.nio.charset.StandardCharsets;
 
