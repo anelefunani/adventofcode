@@ -15,6 +15,6 @@ public class Application {
         return new CaloriesController(
                 new CaloriesServiceImpl(
                         new CaloriesDaoImpl(
-                                "src/main/resources/input.data")));
+                                "calorie-counting/src/main/resources/input.data")));
     }
 }

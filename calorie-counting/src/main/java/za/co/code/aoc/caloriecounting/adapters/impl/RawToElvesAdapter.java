@@ -1,10 +1,10 @@
 package za.co.code.aoc.caloriecounting.adapters.impl;
 
+import za.co.code.aoc.caloriecounting.adapters.Adapter;
 import za.co.code.aoc.caloriecounting.domain.value.ImmutableCalories;
 import za.co.code.aoc.caloriecounting.domain.values.Elves;
 import za.co.code.aoc.caloriecounting.domain.values.ImmutableElf;
 import za.co.code.aoc.caloriecounting.domain.values.ImmutableElves;
-import za.co.code.aoc.caloriecounting.adapters.Adapter;
 
 import java.util.Arrays;
 import java.util.List;

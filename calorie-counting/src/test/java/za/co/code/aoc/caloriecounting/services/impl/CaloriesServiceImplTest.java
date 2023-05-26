@@ -5,7 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.co.code.aoc.caloriecounting.dao.CaloriesDao;
 import za.co.code.aoc.caloriecounting.dao.impl.CaloriesDaoImpl;
-import za.co.code.aoc.caloriecounting.domain.value.*;
+import za.co.code.aoc.caloriecounting.domain.value.ImmutableMostCalories;
+import za.co.code.aoc.caloriecounting.domain.value.ImmutableTopMostCalories;
+import za.co.code.aoc.caloriecounting.domain.value.MostCalories;
+import za.co.code.aoc.caloriecounting.domain.value.TopMostCalories;
 import za.co.code.aoc.caloriecounting.services.CaloriesService;
 
 class CaloriesServiceImplTest {

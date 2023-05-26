@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>za.co.code.aoc.caloriecouting</groupId>
-    <artifactId>calorie-counting</artifactId>
+    <groupId>za.co.code.aoc</groupId>
+    <artifactId>advent-of-code</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>calorie-counting</module>
+    </modules>
 
     <dependencies>
         <dependency>

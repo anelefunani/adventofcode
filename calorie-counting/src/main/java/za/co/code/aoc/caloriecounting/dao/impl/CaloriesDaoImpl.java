@@ -1,9 +1,9 @@
 package za.co.code.aoc.caloriecounting.dao.impl;
 
-import za.co.code.aoc.caloriecounting.dao.CaloriesDao;
-import za.co.code.aoc.caloriecounting.domain.values.Elves;
 import za.co.code.aoc.caloriecounting.adapters.Adapter;
 import za.co.code.aoc.caloriecounting.adapters.impl.RawToElvesAdapter;
+import za.co.code.aoc.caloriecounting.dao.CaloriesDao;
+import za.co.code.aoc.caloriecounting.domain.values.Elves;
 
 import java.io.IOException;
 import java.nio.file.Files;
