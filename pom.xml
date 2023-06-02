@@ -13,6 +13,7 @@
     <modules>
         <module>calorie-counting</module>
         <module>rock-paper-scissors</module>
+        <module>rucksack-reorganization</module>
     </modules>
 
     <dependencies>
