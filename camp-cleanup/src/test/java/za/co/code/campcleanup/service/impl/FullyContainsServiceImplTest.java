@@ -7,7 +7,7 @@ import za.co.code.campcleanup.adapter.Adapter;
 import za.co.code.campcleanup.adapter.impl.RawToSectionPairs;
 import za.co.code.campcleanup.dao.CampCleanUpDao;
 import za.co.code.campcleanup.dao.impl.CampCleanUpDaoImpl;
-import za.co.code.campcleanup.domain.FullyContains;
+import za.co.code.campcleanup.domain.Count;
 import za.co.code.campcleanup.domain.ImmutableFullyContains;
 import za.co.code.campcleanup.domain.SectionPairs;
 import za.co.code.campcleanup.service.ContainsCounterService;
@@ -29,7 +29,7 @@ class FullyContainsServiceImplTest {
 
     @Test
     void count() {
-        FullyContains fullyContains = containsCounterService.count(adapter.adapt(campCleanUpDao.getCampCleanUp()));
+        Count fullyContains = containsCounterService.count(adapter.adapt(campCleanUpDao.getCampCleanUp()));
         Assertions.assertEquals(ImmutableFullyContains.of(2), fullyContains);
     }
 }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.co.code.campcleanup.dao.CampCleanUpDao;
 import za.co.code.campcleanup.dao.impl.CampCleanUpDaoImpl;
-import za.co.code.campcleanup.domain.FullyContains;
+import za.co.code.campcleanup.domain.Count;
 import za.co.code.campcleanup.domain.ImmutableFullyContains;
 import za.co.code.campcleanup.service.CampCleanUpService;
 import za.co.code.campcleanup.service.ContainsCounterService;
@@ -27,7 +27,7 @@ class CampCleanUpServiceImplTest {
 
     @Test
     void cleanup() {
-        FullyContains fullyContains = campCleanupService.cleanup();
+        Count fullyContains = campCleanupService.cleanup();
         Assertions.assertEquals(ImmutableFullyContains.of(2), fullyContains);
     }
 }

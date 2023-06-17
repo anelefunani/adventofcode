@@ -7,13 +7,14 @@ import za.co.code.campcleanup.adapter.Adapter;
 import za.co.code.campcleanup.adapter.impl.RawToSectionPairs;
 import za.co.code.campcleanup.dao.CampCleanUpDao;
 import za.co.code.campcleanup.dao.impl.CampCleanUpDaoImpl;
+import za.co.code.campcleanup.domain.Count;
 import za.co.code.campcleanup.domain.ImmutablePartiallyContains;
-import za.co.code.campcleanup.domain.PartiallyContains;
 import za.co.code.campcleanup.domain.SectionPairs;
+import za.co.code.campcleanup.service.ContainsCounterService;
 
 class PartiallyContainsServiceImplTest {
 
-    private PartiallyContainsServiceImpl containsCounterService;
+    private ContainsCounterService containsCounterService;
 
     private CampCleanUpDao campCleanUpDao;
 
@@ -28,7 +29,7 @@ class PartiallyContainsServiceImplTest {
 
     @Test
     void count() {
-        PartiallyContains partiallyContains = containsCounterService.count(adapter.adapt(campCleanUpDao.getCampCleanUp()));
+        Count partiallyContains = containsCounterService.count(adapter.adapt(campCleanUpDao.getCampCleanUp()));
         Assertions.assertEquals(ImmutablePartiallyContains.of(4), partiallyContains);
     }
 }

@@ -16,7 +16,7 @@ public class PartiallyContainsServiceImpl implements ContainsCounterService {
             Section sectionOne = sectionPair.getSectionOne();
             Section sectionTwo = sectionPair.getSectionTwo();
             if (partiallyContains(sectionOne, sectionTwo) || partiallyContains(sectionTwo, sectionOne)) {
-                partiallyContainsBuilder.value(ImmutableFullyContains.copyOf(partiallyContainsBuilder.build()).getValue() + 1);
+                partiallyContainsBuilder.value(ImmutablePartiallyContains.copyOf(partiallyContainsBuilder.build()).getValue() + 1);
             }
         });
         return partiallyContainsBuilder.build();
