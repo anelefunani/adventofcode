@@ -16,6 +16,7 @@
         <module>rucksack-reorganization</module>
         <module>camp-cleanup</module>
         <module>supply-stacks</module>
+        <module>tuning-trouble</module>
     </modules>
 
     <dependencies>
